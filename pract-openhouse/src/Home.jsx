@@ -8,7 +8,6 @@ import ReasultsContainer from './ResultsContainer'
 
 export default function Home(props) {
   const [searchTerm, setSearchTerm] = useState()
-  const PAGE_SIZE = 5
 
   const [startIndexOfSearch, setStartindexOfSearch] = useState(1)
   const updateStartIndex = (increment, decreament) => {
@@ -36,8 +35,6 @@ export default function Home(props) {
       .then(({ data }) => {
         if (data.items) {
           setSearchResults(data.items)
-          let numPages = data.items.length / PAGE_SIZE
-          setNumberOfPages(numPages)
         }
       })
   }, [searchTerm, startIndexOfSearch])
@@ -50,7 +47,6 @@ export default function Home(props) {
           startIndexOfSearch={startIndexOfSearch}
           searchResults={searchResults}
           numberOfPages={numberOfPages}
-          pageSize={PAGE_SIZE}
         ></ReasultsContainer>
       ) : (
         ''
