@@ -1,0 +1,2 @@
+export const SEARCH_ENGINE_ID = '018264299595958242005:dvs2adlrsca'
+export const KEY = 'AIzaSyAJNCWDx273TeHECuJKxXWP0rJ8-hGqRGM'
